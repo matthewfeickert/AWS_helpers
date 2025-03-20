@@ -1,0 +1,16 @@
+[project]
+authors = ["Matthew Feickert <matthew.feickert@cern.ch>"]
+channels = ["conda-forge"]
+name = "AWS_helpers"
+platforms = ["linux-64", "osx-64", "osx-arm64"]
+version = "0.1.0"
+
+[tasks.download]
+cmd = """
+curl -sLO https://raw.githubusercontent.com/UW-Madison-DataScience/ml-with-aws-sagemaker/main/data/titanic_train.csv && \
+curl -sLO https://raw.githubusercontent.com/UW-Madison-DataScience/ml-with-aws-sagemaker/main/data/titanic_test.csv
+"""
+
+[dependencies]
+curl = ">=8.12.1,<9"
+sagemaker-python-sdk = ">=2.242.0,<3"
